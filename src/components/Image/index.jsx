@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 
 const Image = ({
 	src,
-	isLink, linkTo, target,
+	isLink,
+	linkTo,
+	target,
 	wrapperTag,
-	wrapperStyle,
+	style="",
 	imageStyle,
 	lightBox,
 	altText,
@@ -43,16 +45,16 @@ const Image = ({
 
 	// const CustomTag = customTag.charAt(0).toUpperCase() + customTag.slice(1);
 
-  const CustomTag = customTag.toLowerCase();
+	const CustomTag = customTag.toLowerCase();
 
 	return (
 		<CustomTag
-			className={` ${wrapperStyle ? wrapperStyle : ""} `}
+			className={` ${style} `}
 			{...(isLink && {
 				href: linkTo,
 				target: target,
 			})}>
-			<figure className="relative flex flex-col items-center">
+			<figure className=" flex flex-col items-center">
 				<img
 					className={` ${
 						imageStyle ? imageStyle : ""
@@ -77,7 +79,7 @@ const Image = ({
 				<div
 					className={` ${
 						lightBoxStyle ? lightBoxStyle : ""
-					} fixed top-0 left-0 w-full h-full bg-black bg-opacity-85 flex justify-center items-center `}>
+					} fixed top-0 left-0 w-full h-full bg-black bg-opacity-85 flex justify-center items-center z-20 overflow-auto `}>
 					<div className="flex flex-col items-center">
 						<button
 							className={` ${

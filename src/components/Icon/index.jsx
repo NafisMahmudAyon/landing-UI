@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 
 const Icon = ({
-	icon = '<span class="material-icons ">search</span>',
+	// icon = '<span class="material-icons ">search</span>',
+	icon,
 	iconStyle,
 	iconLibrary = "material-icons",
 }) => {
